@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy</title>
+</head>
+<body>
+
+    <script>
+
+function createCopy(arr, obj){
+const newArray = arr.slice();                  //An array in JavaScript is also an object and variables only hold a reference to an object, not the object itself.
+                                               // Thus both variables have a reference to the same object.
+const newObj = Object.assign({}, obj);        // [Object1]<--------- newObj
+                                               // [Object2]<--------- obj
+newArray.push(4);
+newObj.age = 24;
+
+console.log(newArray);     //(4) [1, 2, 3, 4]
+console.log(newObj);       //{name: "anuj", age: 24}     
+}
+
+const obj = {
+    name : 'anuj'
+}
+
+const arr = [1 , 2, 3];
+createCopy(arr, obj);
+console.log(arr);  //(3) [1, 2, 3]
+console.log(obj);  //{name: "anuj"}
+    </script>
+    
+</body>
+</html>

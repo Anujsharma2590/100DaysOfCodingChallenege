@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButtonClickChangeLimit</title>
+</head>
+<body>
+  <h1 id="heading">The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="btn">Click here to change my color!</button>
+
+  <script>
+ let btn = document.querySelector("#btn");
+
+ document.querySelector("#btn").addEventListener('mouseover', function(){
+ document.querySelector("#btn").style.fontSize = "x-large";      
+ });
+  document.querySelector("#btn").addEventListener('mouseout', function(){
+ document.querySelector("#btn").style.fontSize = "small";      
+ });
+   var i = 0;
+    btn.addEventListener("click", removeListerner);
+
+
+    function removeListerner(){
+      const rndCol ="rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      document.querySelector('#heading').style.color = rndCol;
+       if(i===1){
+        btn.removeEventListener('click' , removeListerner)
+       }
+     i++;
+    }
+
+    function random(number) {
+      return Math.floor(Math.random() * (number + 1));
+    }
+  </script>
+
+<script>
+
+</script>
+</body>
+</html>

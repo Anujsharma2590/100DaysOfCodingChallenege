@@ -1,0 +1,67 @@
+<!-- //create prison security system -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            text-align: center;
+        }
+        #btn1 {
+           background-color: black;
+           color: aliceblue;
+        } 
+         #btn2 {
+           background-color: black;
+           color: aliceblue;
+        } 
+         #btn3 {
+           background-color: black;
+           color: aliceblue;
+        } 
+         #btn4 {
+           background-color: black;
+           color: aliceblue;
+        } 
+        #message{
+            height: 100px;
+            width: 400px;
+            border: 2px solid black;
+            margin-top: 20px;
+        
+        }
+    </style>
+    <title>Prison-Security-Syatem</title>
+</head>
+<body>
+    <h1> Prison Security System </h1>
+    <button id="btn1" onclick="showAlert('Main Door Breach')">Main Door Breach</button>
+    <button id="btn2" onclick="showAlert('prison riot')">prison riot</button>
+    <button id="btn3" onclick="showAlert('CCTV Alert')">CCTV-Alert</button>
+    <button id="btn4" onclick="showAlert('Parking Door Breach')">Parking door Breach</button>
+
+    <input type="text" id="customMsg" placeholder="Enter Custom Alert">
+    <button onclick="showCustomAlert()">show message</button>
+    <div id="message"></div>
+
+</body>
+</html>
+<script>
+
+function showAlert(msg){
+    alert(msg);
+}
+// create input for custom alert 
+
+function showCustomAlert(){
+    var msg = document.getElementById("customMsg").value;
+
+    var div = document.getElementById("message");
+
+    div.append(msg);
+   // div.innerHTML = msg;
+}
+
+</script>

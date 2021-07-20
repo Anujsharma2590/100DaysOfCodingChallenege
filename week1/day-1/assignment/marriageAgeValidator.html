@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marraige-Age-Validator</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+
+    <div>
+        <select name="marriageValidator" id="mySelect">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="male">M</option>
+            <option value="female">F</option>
+        </select>
+    </div>
+    <h1>Enter Birth Year</h1>
+    <div>
+        <input type="text" id="myTxt">
+    </div>
+
+
+    <script>
+  const year = new Date().getFullYear();
+  var myselect = document.querySelector("#mySelect");
+
+  myselect.addEventListener("change", function() {
+    var doby = document.querySelector("#myTxt").value;
+    var age = year-Number(doby);
+    if(myselect.value == "male")
+    {
+        if(age>=21){
+          alert("Congratulation!!! you can marriage");
+        }else{
+            alert(`Sorry!! ${age} Is Not a valid age for marraige`);
+        }
+     
+    }
+     if(myselect.value == "female")
+    {
+        if(age>=18){
+         alert("Congratulation!!! you can marriage");
+        }else{
+            alert(`Sorry!! ${age} Is Not a valid age for marraige`)
+        }
+     
+    }
+});
+ 
+
+    </script>
+    
+</body>
+</html>

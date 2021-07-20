@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max-Min</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      form {
+        display: inline-block;
+      }
+      #btnEntr {
+        display: flex;
+        justify-content: center;
+      }
+      #enterBtn {
+        background-color: black;
+        color: white;
+        font-size: larger;
+        height: 80px;
+        width: 300px;
+      }
+      #inputParent {
+        display: flex;
+        flex-direction: column;
+      }
+      #myInput {
+        width: 300px;
+        height: 110px;
+      }
+      #min-max {
+        display: flex;
+        justify-content: center;
+      }
+      #min {
+        width: 150px;
+        height: 100px;
+        background-color: red;
+      }
+      #max {
+        width: 150px;
+        height: 100px;
+        background-color: darkgreen;
+      }
+      .btn {
+        height: 70px;
+        width: 70px;
+        border: 1px solid black;
+        font-size: xx-large;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form>
+        <input type="text " id="min" style="text-align: center; font-size: xx-large; margin-right: 50px;"/>
+        <input type="text" id="max" style="text-align: center; font-size: xx-large;"/>
+      </form>
+      <div id="min-max">
+        <h1 style="margin-right: 120px;">MIN</h1>
+        <h1>MAX</h1>
+      </div>
+    </div>
+
+    <div id="inputParent">
+      <h1 id="hScore">SCORE</h1>
+      <form >
+       <input type="text" id="myInput" placeholder="#" style="text-align: center; font-size: xx-large; margin-bottom: 50px; color: black;"/>
+      </form>
+      
+    </div>
+
+    <div>
+      <div id="row1" style="margin-bottom: 40px;">
+        <button class="btn" onclick="change(1)" style="background-color: #668100">1</button>
+        <button class="btn" onclick="change(2)"style="background-color: #ff6600">2</button>
+        <button class="btn" onclick="change(3)"style="background-color: #668100">3</button>
+      </div>
+      <div id="row2" style="margin-bottom: 40px;">
+        <button class="btn" onclick="change(4)"style="background-color: #ff6600">4</button>
+        <button class="btn" onclick="change(5)"style="background-color: #ff6600">5</button>
+        <button class="btn" onclick="change(6)"style="background-color: #ff6600">6</button>
+      </div>
+      <div id="row3" style="margin-bottom: 40px;">
+        <button class="btn" onclick="change(7)"style="background-color: #668100">7</button>
+        <button class="btn" onclick="change(8)"style="background-color: #ff6600">8</button>
+        <button class="btn" onclick="change(9)"style="background-color: #668100">9</button>
+      </div>
+      <div id="row4" style="margin-bottom: 20px;">
+        <button class="btn" onclick="change(0)"style="background-color: #810065">0</button>
+      </div>
+    </div>
+
+    <div id="btnEntr">
+      <button id="enterBtn" onclick="enterClick()">ENTER</button>
+    </div>
+    <script>
+     var min = document.querySelector("#min").value = 43;
+     var max = document.querySelector("#max").value = 2019;
+     var num = 0;
+    function change(a){
+       x = num * 10 + a;
+       num = x;
+       document.querySelector("#myInput").value = x;
+    }
+    
+    function enterClick(){
+     var val = document.querySelector("#myInput").value;
+     if(val<min){
+      document.querySelector('#min').value = val;
+     }
+     if(val > max){
+      document.querySelector('#max').value = val;
+     }
+     document.querySelector("#myInput").value = '';
+    }
+    
+    </script>
+  </body>
+</html>

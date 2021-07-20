@@ -1,0 +1,14 @@
+#parent{
+    display: flex;
+    justify-content: center;
+}
+input{
+    margin-bottom: 5%;
+}
+#login{
+    width: 10%;
+}
+h1{
+    text-align: center;
+    margin-top: 10%;
+}

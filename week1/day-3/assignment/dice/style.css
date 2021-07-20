@@ -1,0 +1,30 @@
+#container{
+    margin: 50px 300px 100px 100px;
+    padding: 50px 500px 50px 500px;
+}
+
+
+.dice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 50px;  
+  margin: 8px;
+  border: solid 3px #aaa;
+  border-radius: 3px;
+  width: 100px;
+  height: 100px;
+}
+button{
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+}
+
+
+
+
+

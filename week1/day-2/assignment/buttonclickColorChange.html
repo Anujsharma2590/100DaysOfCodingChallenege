@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button-color-change</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>Change the buttons text color random value</h1>
+    <button
+      id="btn1"
+      style="
+        height: 100px;
+        width: 200px;
+        font-size: x-large;
+        border: 3px solid black;
+      "
+    >
+      Click here to change my color
+    </button>
+    <div>
+      <h1 style="margin-top: 20px">
+        Change the buttons text color of given value in Array
+      </h1>
+      <button
+        id="btn2"
+        style="
+          height: 100px;
+          width: 200px;
+          font-size: x-large;
+          border: 3px solid black;
+        "
+      >
+        Click here to change my color from Given Array
+      </button>
+    </div>
+  </body>
+  <script>
+    let btn = document.querySelector("#btn1");
+    btn.addEventListener("click", function () {
+      const rndCol =
+        "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+      btn.style.color = rndCol;
+    });
+
+    function random(number) {
+      return Math.floor(Math.random() * (number + 1));
+    }
+
+    let btn1 = document.querySelector("#btn2");
+    var colors = ["red", "purple", "orange", "green"];
+    var i = 0;
+    btn1.addEventListener("click", function () {
+      if (i >= colors.length) {
+        i = 0;
+      }
+      btn1.style.color = colors[i];
+      i++;
+    });
+  </script>
+</html>

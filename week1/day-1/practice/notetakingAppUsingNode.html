@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+</head>
+<body>
+    <h1>Note taking App</h1>
+
+    <input type="text" id="customMsg" placeholder="Enter Notes" onfocus="this.value=''" >
+
+    <button onclick="addNotes()">Add Notes</button>
+
+    <div id="message"></div>
+</body>
+</html>
+
+<script>
+//1. take a input from user - Note, string
+
+        function addNotes() {
+            var note = document.getElementById("customMsg").value;
+
+             const para = document.createElement("p");
+             const node = document.createTextNode(note);
+
+             para.appendChild(node);
+             const element = document.getElementById("message");
+             element.appendChild(para);
+
+             
+        }
+
+</script>
